@@ -40,11 +40,37 @@ FastAPI Backend
 ↓
 GROQ AI + SQLite DB + Resend Automation
 
+![Architecture ](./screenshots/arch.png)
+
 ---
 
 ## Screenshots
 
-(Add screenshots here)
+## AI Chatbot
+
+![Chatbot](./screenshots/Chatbot.png)
+
+---
+
+## Dashboard
+
+![Dashboard](./screenshots/Dashboard.png)
+
+---
+
+## Admin
+
+![Admin](./screenshots/Admin.png)
+
+---
+## Lead Submit
+
+![Lead Submit](./screenshots/Lead_submit.png)
+
+---
+## Lead Mail
+
+![Lead Mail](./screenshots/LeadMail.png)
 
 ---
 
