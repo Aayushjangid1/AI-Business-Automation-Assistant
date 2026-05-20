@@ -9,31 +9,43 @@ from schemas import LeadCreate
 from chatbot import ask_ai
 from email_service import send_email_notification
 
+# Create database tables
 Base.metadata.create_all(bind=engine)
 
+# FastAPI app
 app = FastAPI()
 
+# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://YOUR-VERCEL-URL.vercel.app"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Database Session
 def get_db():
 
     db = SessionLocal()
 
     try:
         yield db
+
     finally:
         db.close()
 
+
+# Home Route
 @app.get("/")
 def home():
-    return {"message": "AI Business Assistant Running"}
 
+    return {
+        "message": "AI Business Assistant Running"
+    }
+
+
+# AI Chat Route
 @app.post("/chat")
 def chat(data: dict):
 
@@ -41,8 +53,12 @@ def chat(data: dict):
 
     answer = ask_ai(question)
 
-    return {"response": answer}
+    return {
+        "response": answer
+    }
 
+
+# Lead Submission Route
 @app.post("/lead")
 def create_lead(
     lead: LeadCreate,
@@ -62,14 +78,19 @@ def create_lead(
 
     db.refresh(new_lead)
 
+    # Send Email Notification
     send_email_notification(new_lead)
 
     return {
         "message": "Lead saved successfully"
     }
 
+
+# Get All Leads Route
 @app.get("/leads")
-def get_leads(db: Session = Depends(get_db)):
+def get_leads(
+    db: Session = Depends(get_db)
+):
 
     leads = db.query(Lead).all()
 

@@ -14,7 +14,7 @@ export default function Home() {
 
   const navigate = useNavigate();
 
-  const API = "https://YOUR-RENDER-URL.onrender.com";
+  const API = "https://ai-business-automation-assistant-vow8.onrender.com";
 
   const [message, setMessage] = useState("");
 
