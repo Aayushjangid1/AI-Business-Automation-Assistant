@@ -96,8 +96,8 @@ npm run dev
 
 ## Deployment
 
-Frontend deployed on Vercel  
-Backend deployed on Render
+Frontend deployed on Vercel:- https://ai-business-automation-assistant.vercel.app 
+Backend deployed on Render:- https://ai-business-automation-assistant-vow8.onrender.com/docs
 
 ---
 
