@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.glow1 {
+  background: #3b82f6;
+  top: -100px;
+  left: -100px;
+}
+
+.glow2 {
+  background: #8b5cf6;
+  bottom: -100px;
+  right: -100px;
+}
+
+.glow3 {
+  background: #06b6d4;
+  top: 40%;
+  left: 40%;
+}
